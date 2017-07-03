@@ -1,4 +1,4 @@
-FROM dockerfile/ubuntu
+FROM ubuntu:14.04
 
 WORKDIR /
 
@@ -12,7 +12,7 @@ RUN \
 
 RUN rm -f /etc/nginx/sites-enabled/default
 
-ADD https://github.com/hashicorp/consul-template/releases/download/v0.7.0/consul-template_0.7.0_linux_amd64.tar.gz /consul-template_0.7.0_linux_amd64.tar.gz
+ADD wget https://releases.hashicorp.com/consul-template/0.19.0/consul-template_0.19.0_linux_amd64.tgz /consul-template_0.19.0_linux_amd64.tgz
 RUN tar xzvf /consul-template_0.7.0_linux_amd64.tar.gz --strip-components=1 && rm /consul-template_0.7.0_linux_amd64.tar.gz
 
 ADD reload-nginx.sh /reload-nginx.sh
