@@ -12,8 +12,8 @@ RUN \
 
 RUN rm -f /etc/nginx/sites-enabled/default
 
-ADD https://releases.hashicorp.com/consul-template/0.19.0/consul-template_0.19.0_linux_amd64.tgz /consul-template_0.19.0_linux_amd64.tgz
-RUN tar xzvf /consul-template_0.19.0_linux_amd64.tgz --strip-components=1 && rm /consul-template_0.19.0_linux_amd64.tgz
+ADD https://releases.hashicorp.com/consul-template/0.19.0/consul-template_0.19.0_linux_amd64.tgz consul-template_0.19.0_linux_amd64.tgz
+RUN tar xzvf consul-template_0.19.0_linux_amd64.tgz --strip-components=1 && rm consul-template_0.19.0_linux_amd64.tgz
 
 ADD reload-nginx.sh /reload-nginx.sh
 ADD app-nginx.ctmpl /app-nginx.ctmpl
